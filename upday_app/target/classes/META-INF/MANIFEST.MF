@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: upday_app
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ricky
+Implementation-Vendor-Id: com.upday
+Build-Jdk: 1.8.0_71
+Implementation-URL: http://projects.spring.io/spring-boot/upday_app/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
