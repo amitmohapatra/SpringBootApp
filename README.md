@@ -130,4 +130,5 @@
  - for no match it will return [] (empty list)
  
  # select by keyword
+  - http://localhost:8080/v1/article/keyword?search=compac&access_token=425bb807-cb33-492b-abcd-a135be4901a4
      
