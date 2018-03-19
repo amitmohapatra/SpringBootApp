@@ -42,7 +42,7 @@
    - apis can be accessed through access token but role is not checked for the time being.
   
 # create an article
-   - curl -X POST --user my-trusted-client:secret 'http://localhost:8080/v1/article?access_token=ba12ed81-313b-4c7d-b9ba-4ad551da5f5d' -H 'content-type: application/json' -d '{"authors": ["user", "user1"],"description": "test test","header": "tset","tags":["test", "test2", "compac"],"text":"test test test","createdByUsername": "user"}'
+   - curl -X POST 'http://localhost:8080/v1/article?access_token=6b47929d-34b9-4d70-8a61-0458de8c9fbb' -H 'content-type: application/json' -d '{"authors": ["user", "user1"],"description": "test test","header": "tset","tags":["test", "test2", "compac"],"text":"test test test","createdByUsername": "user"}'
    - on success you will get a response like :
      {
       "id": 5,
