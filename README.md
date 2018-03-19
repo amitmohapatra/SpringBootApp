@@ -133,7 +133,7 @@
  - for no match it will return [] (empty list)
  
  # select all article by keyword
-  - http://localhost:8080/v1/article/keyword?search=compac&access_token=425bb807-cb33-492b-abcd-a135be4901a4
+  - curl -X GET 'http://localhost:8080/v1/article/keyword?search=compac&access_token=6b47929d-34b9-4d70-8a61-0458de8c9fbb' -d '{"username": "user"}'
   
  # select all article by dates
   - curl -X POST 'http://localhost:8080/v1/article/date?access_token=425bb807-cb33-492b-abcd-a135be4901a4' -H 'content-type: application/json' -d '{"begindate": "2018-03-20 01:57:38.198","enddate": "2018-03-24 01:57:38.198"}'
