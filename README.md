@@ -38,6 +38,7 @@
    - on success we will get a response 
      {"access_token":"ba12ed81-313b-4c7d-b9ba-4ad551da5f5d","token_type":"bearer","expires_in":4999,"scope":"
      read write trust"}
+   - apis can be accessed through access token but role is not checked for the time being.
   
 # create an article
    - curl -X POST --user my-trusted-client:secret \
@@ -75,4 +76,10 @@
     "path": "/v1/article"
    }
   - editor can be an author by assumption.
-  - you can create article without author or tags
+  - you can create an article without author or tags by providing empty list.
+  
+  # update an article
+  
+     - curl -X PUT 'http://localhost:8080/v1/article?access_token=a2df5070-b14d-4990-977e-8e52c2bba762' -H 'content-type: 
+       application/json' -d '{"id":4,"authors": ["user", "user1"],"description": "test test","header": "tset","tags": ["test",
+       "test2222", "compac123"],"text": "test test test","createdByUsername": "user"}'
