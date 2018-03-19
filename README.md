@@ -133,5 +133,62 @@
   - http://localhost:8080/v1/article/keyword?search=compac&access_token=425bb807-cb33-492b-abcd-a135be4901a4
   
  # select all article by dates
-  -
-     
+  - curl -X POST 'http://localhost:8080/v1/article/date?access_token=425bb807-cb33-492b-abcd-a135be4901a4' -H 'content-type: application/json' -d '{"begindate": "2018-03-20 01:57:38.198","enddate": "2018-03-24 01:57:38.198"}'
+  - on success
+    [
+    {
+        "id": 3,
+        "createdByUsername": "admin",
+        "header": "apple",
+        "description": "apple phone",
+        "text": "apple phone",
+        "createdDate": "2018-03-20 01:57:38.198000",
+        "updatedDate": "2018-03-20 01:57:38.198000"
+    },
+    {
+        "id": 2,
+        "createdByUsername": "admin",
+        "header": "nokia",
+        "description": "nokia phone",
+        "text": "nokia phone",
+        "createdDate": "2018-03-20 01:57:38.198000",
+        "updatedDate": "2018-03-20 01:57:38.198000"
+    },
+    {
+        "id": 1,
+        "createdByUsername": "admin",
+        "header": "mobile",
+        "description": "samsung phone",
+        "text": "samsung phone",
+        "createdDate": "2018-03-20 01:57:38.198000",
+        "updatedDate": "2018-03-20 01:57:38.198000"
+    },
+    {
+        "id": 5,
+        "createdByUsername": "user",
+        "header": "tset",
+        "description": "test test",
+        "text": "test test",
+        "authors": [
+            "user",
+            "user1"
+        ],
+        "tags": [
+            "test2",
+            "test",
+            "compac"
+        ],
+        "createdDate": "2018-03-20 01:59:53.080000",
+        "updatedDate": "2018-03-20 01:59:53.080000"
+    }
+    ]     
+ - date format should be in yyyy-MM-dd HH:mm:ss.SSS format
+ - if you begindate is greter than end date then you will get an error
+    {
+    "timestamp": 1521492933253,
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "com.upday.exception.EntityNotFoundException",
+    "message": "Begin date should not be greater than start date",
+    "path": "/v1/article/date"
+    }
