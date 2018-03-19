@@ -105,4 +105,29 @@
   - select all except deleted
   
 # select by author attribute (by  author username)
+  - curl -X POST 'http://localhost:8080/v1/article/author?access_token=35641e89-3430-44d7-ba98-cac082ca6ca8' -H 'content-type: application/json' -d '{"username": "user"}'
+  - if success you will get result like :
+    [
+    {
+        "id": 5,
+        "createdByUsername": "user",
+        "header": "tset",
+        "description": "test test",
+        "text": "test test",
+        "authors": [
+            "user",
+            "user1"
+        ],
+        "tags": [
+            "test2",
+            "test",
+            "compac"
+        ],
+        "createdDate": "2018-03-20 01:41:05.887000",
+        "updatedDate": "2018-03-20 01:41:05.887000"
+    }
+   ]
+ - for no match it will return [] (empty list)
+ 
+ # select by keyword
      
