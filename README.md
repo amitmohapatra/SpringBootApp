@@ -89,5 +89,15 @@
    - delete implementation is a soft delete mechanism. which do not delete the article from db but make field to false.
    
 # select one article
+  - curl -X GET 'http://localhost:8080/v1/article/2?access_token=d6b52a53-3b24-49e9-9924-e146117b5048'
+  - if article not present or deleted then
+    {
+    "timestamp": 1521486256641,
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "com.upday.exception.EntityNotFoundException",
+    "message": "Could not find article with id: 4",
+    "path": "/v1/article/4"
+    }
 
      
