@@ -195,3 +195,7 @@
     "message": "Begin date should not be greater than start date",
     "path": "/v1/article/date"
     }
+
+# Enhancements
+ - Role basis access to API.
+ - Role associted with Article (READ, WRITE)
