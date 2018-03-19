@@ -14,6 +14,7 @@
   - you can create a user by following curl command
   - curl -X POST http://localhost:8080/users/sign-up -H 'content-type: application/json' -d '{"name":    "user","password":"user","userName": "user"}'
   - create one more user with user name user1.
+    curl -X POST http://localhost:8080/users/sign-up -H 'content-type: application/json' -d '{"name":    "user1","password":"user1","userName": "user1"}'
     
   - for valid user creation we will get response like : {
     "userName": "user",
