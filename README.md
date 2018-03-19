@@ -75,3 +75,4 @@
     "path": "/v1/article"
    }
   - editor can be an author by assumption.
+  - you can create article without author or tags
