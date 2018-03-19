@@ -100,4 +100,9 @@
     "path": "/v1/article/4"
     }
 
+# select all article
+  - curl -X GET 'http://localhost:8080/v1/article?access_token=6eda71ee-7bc5-4857-80fc-75023ea16b56'
+  - select all except deleted
+  
+# select by author attribute (by  author username)
      
