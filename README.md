@@ -7,7 +7,7 @@
         - Database H2 (In-Memory)
         - Maven
         
-# create user
+# create an user
   - Application need few users to be created.
   - A admin user is created by default (username - admin, password - admin, name - admin, Role - ADMIN)
   - username is a unique constraint in DB.
@@ -64,3 +64,13 @@
       "createdDate": "2018-03-19 21:50:09.971000",
       "updatedDate": "2018-03-19 21:50:09.971000"
      }
+     
+  - application accept only valid user(created) as author. else it will throw an error.
+    {
+    "timestamp": 1521477097648,
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "com.upday.exception.ConstraintsViolationException",
+    "message": "user does not exist with username : user12",
+    "path": "/v1/article"
+   }
