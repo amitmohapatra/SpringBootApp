@@ -76,9 +76,9 @@
    }
   - editor can be an author by assumption.
   - you can create an article without author or tags by providing empty list.
-  
-  # update an article
-  
-     - curl -X PUT 'http://localhost:8080/v1/article?access_token=a2df5070-b14d-4990-977e-8e52c2bba762' -H 'content-type: 
+ 
+# update an article
+  - curl -X PUT 'http://localhost:8080/v1/article?access_token=a2df5070-b14d-4990-977e-8e52c2bba762' -H 'content-type: 
        application/json' -d '{"id":4,"authors": ["user", "user1"],"description": "test test","header": "tset","tags": ["test",
-       "test2222", "compac123"],"text": "test test test","createdByUsername": "user"}'
+       "test2222", "compac123"],"text": "test test test","createdByUsername": "user"}' 
+     
