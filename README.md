@@ -1,6 +1,9 @@
 # SpringBootApp
   
   - Application starts by using the url http://localhost:8080 by executing com.upday.Application
+  - H2 db access http://localhost:8080/console and put jdbc:h2:mem:upday_db in JDBC URL
+  
+# Tech Stacks
   - Java 1.8
   - Spring Boot
   - Database H2 (In-Memory)
@@ -183,7 +186,7 @@
     }
     ]     
  - date format should be in yyyy-MM-dd HH:mm:ss.SSS format
- - if you begindate is greter than end date then you will get an error
+ - if your begindate is greter than enddate then you will get an error
     {
     "timestamp": 1521492933253,
     "status": 400,
