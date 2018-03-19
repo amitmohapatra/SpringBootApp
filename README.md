@@ -32,19 +32,14 @@
     
 # create an access token
    - once you create a user, you need to create access token to access other urls for that user.
-   - curl -X POST  --user my-trusted-client:secret      \  
-   'http://localhost:8080/oauth/token?grant_type=password&username=user&password=user'
+   - curl -X POST  --user my-trusted-client:secret  'http://localhost:8080/oauth/token?grant_type=password&username=user&password=user'
    - on success we will get a response 
      {"access_token":"ba12ed81-313b-4c7d-b9ba-4ad551da5f5d","token_type":"bearer","expires_in":4999,"scope":"
      read write trust"}
    - apis can be accessed through access token but role is not checked for the time being.
   
 # create an article
-   - curl -X POST --user my-trusted-client:secret \
-     'http://localhost:8080/v1/article?access_token=ba12ed81-313b-4c7d-b9ba-4ad551da5f5d' \
-     -H 'content-type: application/json' \
-     -d '{"authors": ["user", "user1"],"description": "test test","header": "tset","tags":["test", "test2", "compac"],
-     "text":"test test test","createdByUsername": "user"}'
+   - curl -X POST --user my-trusted-client:secret 'http://localhost:8080/v1/article?access_token=ba12ed81-313b-4c7d-b9ba-4ad551da5f5d' -H 'content-type: application/json' -d '{"authors": ["user", "user1"],"description": "test test","header": "tset","tags":["test", "test2", "compac"],"text":"test test test","createdByUsername": "user"}'
    - on success you will get a response like :
      {
       "id": 5,
@@ -78,7 +73,5 @@
   - you can create an article without author or tags by providing empty list.
  
 # update an article
-  - curl -X PUT 'http://localhost:8080/v1/article?access_token=a2df5070-b14d-4990-977e-8e52c2bba762' -H 'content-type: 
-       application/json' -d '{"id":4,"authors": ["user", "user1"],"description": "test test","header": "tset","tags": ["test",
-       "test2222", "compac123"],"text": "test test test","createdByUsername": "user"}' 
+  - curl -X PUT 'http://localhost:8080/v1/article?access_token=a2df5070-b14d-4990-977e-8e52c2bba762' -H 'content-type: application/json' -d '{"id":4,"authors": ["user", "user1"],"description": "test test","header": "tset","tags": ["test","test2222", "compac123"],"text": "test test test","createdByUsername": "user"}' 
      
