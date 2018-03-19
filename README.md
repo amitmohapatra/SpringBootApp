@@ -74,3 +74,4 @@
     "message": "user does not exist with username : user12",
     "path": "/v1/article"
    }
+  - editor can be an author by assumption.
