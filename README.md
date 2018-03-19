@@ -74,4 +74,20 @@
  
 # update an article
   - curl -X PUT 'http://localhost:8080/v1/article?access_token=a2df5070-b14d-4990-977e-8e52c2bba762' -H 'content-type: application/json' -d '{"id":4,"authors": ["user", "user1"],"description": "test test","header": "tset","tags": ["test","test2222", "compac123"],"text": "test test test","createdByUsername": "user"}' 
+  
+# delete an article
+  - curl -X DELETE 'http://localhost:8080/v1/article/4?access_token=d6b52a53-3b24-49e9-9924-e146117b5048'
+  - if article not present then it will throw an error : 
+    {
+    "timestamp": 1521485902980,
+    "status": 400,
+    "error": "Bad Request",
+    "exception": "com.upday.exception.EntityNotFoundException",
+    "message": "Could not find article with id: 4",
+    "path": "/v1/article/4"
+    }
+   - delete implementation is a soft delete mechanism. which do not delete the article from db but make field to false.
+   
+# select one article
+
      
