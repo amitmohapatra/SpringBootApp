@@ -104,7 +104,7 @@
   - curl -X GET 'http://localhost:8080/v1/article?access_token=6eda71ee-7bc5-4857-80fc-75023ea16b56'
   - select all except deleted
   
-# select by author attribute (by  author username)
+# select all article by author attribute (by  author username)
   - curl -X POST 'http://localhost:8080/v1/article/author?access_token=35641e89-3430-44d7-ba98-cac082ca6ca8' -H 'content-type: application/json' -d '{"username": "user"}'
   - if success you will get result like :
     [
@@ -129,6 +129,6 @@
    ]
  - for no match it will return [] (empty list)
  
- # select by keyword
+ # select all article by keyword
   - http://localhost:8080/v1/article/keyword?search=compac&access_token=425bb807-cb33-492b-abcd-a135be4901a4
      
