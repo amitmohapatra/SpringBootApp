@@ -2,13 +2,11 @@ package com.upday.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-/**
- * Created by Amit Mohapatra on 3/17/18.
- */
 public class LoggingInterceptor extends HandlerInterceptorAdapter {
 
 	private static final Log LOG = LogFactory.getLog(LoggingInterceptor.class);

@@ -11,9 +11,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 /**
- * This class is responsible for Swagger2 configuration. Created by Amit
- * Mohapatra on 03/17/18.
- * <p/>
+ * This class is responsible for Swagger2 configuration. 
+ * Created by Amit Mohapatra on 03/17/18.
  */
 @Configuration
 public class SwaggerConfig {

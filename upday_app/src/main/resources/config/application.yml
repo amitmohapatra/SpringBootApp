@@ -25,5 +25,6 @@ spring:
         trace: false
         web-allow-others: false
 security:
-  basic:
-    enabled: false       
+  oauth2:
+    resource:
+      filter-order: 3

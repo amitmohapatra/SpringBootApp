@@ -1,31 +1,54 @@
 package com.upday.dto;
 
+import java.util.List;
+import java.util.Set;
+
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ArticleData {
 
-	@JsonIgnore
 	private Long id;
+	@JsonIgnore
+	private String createdByUsername;
 	private String header;
 	private String description;
 	private String text;
+	@NotNull
+	private List<String> authors;
+	@NotNull
+	private Set<String> tags;
+	@JsonIgnore
+	private String createdDate;
+	@JsonIgnore
+	private String updatedDate;
 
 	private ArticleData() {
 	}
 
-	private ArticleData(Long id, String header, String description, String text) {
-		this.id = id;
-		this.header = header;
-		this.description = description;
-		this.text = text;
+	private ArticleData(ArticleDataBuilder obj) {
+		this.id = obj.id;
+		this.createdByUsername = obj.createdByUsername;
+		this.header = obj.header;
+		this.description = obj.description;
+		this.text = obj.text;
+		this.authors = obj.authors;
+		this.tags = obj.tags;
+		this.createdDate = obj.createdDate;
+		this.updatedDate = obj.updatedDate;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	@JsonProperty
-	public Long getId() {
-		return id;
+	public String getCreatedByUsername() {
+		return createdByUsername;
 	}
 
 	public String getHeader() {
@@ -40,18 +63,46 @@ public class ArticleData {
 		return text;
 	}
 
+	public List<String> getAuthors() {
+		return authors;
+	}
+
+	public Set<String> getTags() {
+		return tags;
+	}
+
+	@JsonProperty
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	@JsonProperty
+	public String getUpdatedDate() {
+		return updatedDate;
+	}
+
 	public static ArticleDataBuilder newArticleDataBuilder() {
 		return new ArticleDataBuilder();
 	}
 
 	public static class ArticleDataBuilder {
 		private Long id;
+		private String createdByUsername;
 		private String header;
 		private String description;
 		private String text;
+		private List<String> authors;
+		private Set<String> tags;
+		private String createdDate;
+		private String updatedDate;
 
 		public ArticleDataBuilder setId(Long id) {
 			this.id = id;
+			return this;
+		}
+
+		public ArticleDataBuilder setCreatedByUsername(String username) {
+			this.createdByUsername = username;
 			return this;
 		}
 
@@ -70,8 +121,28 @@ public class ArticleData {
 			return this;
 		}
 
+		public ArticleDataBuilder setAuthors(List<String> authors) {
+			this.authors = authors;
+			return this;
+		}
+
+		public ArticleDataBuilder setTags(Set<String> tags) {
+			this.tags = tags;
+			return this;
+		}
+
+		public ArticleDataBuilder setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
+			return this;
+		}
+
+		public ArticleDataBuilder setUpdatedDate(String updatedDate) {
+			this.updatedDate = updatedDate;
+			return this;
+		}
+
 		public ArticleData build() {
-			return new ArticleData(id, header, description, text);
+			return new ArticleData(this);
 		}
 
 	}

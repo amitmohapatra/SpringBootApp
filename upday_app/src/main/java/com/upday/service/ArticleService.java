@@ -1,21 +1,25 @@
 package com.upday.service;
 
+import java.time.ZonedDateTime;
+
 import com.upday.entity.Article;
-import com.upday.exception.ArticleNotFoundException;
+import com.upday.exception.ConstraintsViolationException;
+import com.upday.exception.EntityNotFoundException;
 
 /**
- * Created by Amit Mohapatra on 3/17/18.
+ * Created by Amit Mohapatra on 03/17/18.
  */
 public interface ArticleService {
 
-	Article findArticleById(final Long articleId) throws ArticleNotFoundException;
+	Article findArticleById(final Long articleId) throws EntityNotFoundException;
 
 	Iterable<Article> findAllArticles();
 
-	Article create(final Article article) throws ArticleNotFoundException;
+	Article create(final Article article) throws ConstraintsViolationException;
 
-	void update(final Article article) throws ArticleNotFoundException;
+	void update(final Article article) throws EntityNotFoundException;
 
-	void delete(final Long articleId) throws ArticleNotFoundException;
+	void delete(final Long articleId) throws EntityNotFoundException;
 
+	Iterable<Article> findArticlesByDate(ZonedDateTime begindate, ZonedDateTime enddate) throws EntityNotFoundException;
 }
